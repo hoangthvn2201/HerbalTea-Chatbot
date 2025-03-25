@@ -10,7 +10,7 @@ page = st.markdown("""
     API endpoint: /v1/chat
 """)
 
-st.session_state.flask_api_url_1 = "https://dd90-34-125-186-68.ngrok-free.app/v1/chat"  # Set your Flask API URL here
+st.session_state.flask_api_url_1 = "https://dc23-34-87-172-117.ngrok-free.app/v1/chat"  # Set your Flask API URL here
 
 # Generate a random session ID
 session_id = str(uuid.uuid4())
