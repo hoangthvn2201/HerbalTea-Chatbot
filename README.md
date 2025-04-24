@@ -15,8 +15,7 @@ This project is created to build a chatbot capable of consulting and taking of c
 ![Pipeline][pipeline-screenshot]
 
 
-## Pipeline (version 2)
-![Pipeline2][pipeline-screenshot2]
+
 
 ## Setup 
 
@@ -47,4 +46,3 @@ Tran Huy Hoang - [@huyhoangt2004](https://www.linkedin.com/in/huyhoangt2004/) - 
 
 [product-screenshot]: images/screenshot.png
 [pipeline-screenshot]: images/graph.png
-[pipeline-screenshot2]: images/graph_v2.png
