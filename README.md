@@ -1,6 +1,6 @@
 # HerbalTea Chatbot
 
-This project is created to build a chatbot capable of consulting and taking of customers of a herbal tea shop. 
+This project is created to build a chatbot capable of consulting and taking care of customers of a herbal tea shop. 
 ![Product Name Screen Shot][product-screenshot]
 
 
