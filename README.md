@@ -1,44 +1,104 @@
-# HerbalTea Chatbot
+# 🌿 HerbaZen Chatbot Assistant
 
-This project is created to build a chatbot capable of consulting and taking care of customers of a herbal tea shop. 
-![Product Name Screen Shot][product-screenshot]
+HerbaZen Chatbot Assistant is an intelligent virtual assistant designed for **HerbaZen**, a herbal tea brand. The assistant leverages Retrieval-Augmented Generation (RAG) to deliver accurate, conversational responses to customer queries about the brand's products, benefits, and herbal ingredients.
 
+## 📌 Project Purpose
 
-## Key Features
-* Run and expose API with Google Colab.
-* Advise on the types of  tea products available in the store based on the customer's health status.
-* Use of information from the tea shop's website 
+This chatbot aims to:
+- Provide instant and accurate responses to customer questions about HerbaZen herbal teas.
+- Educate users on the health benefits, ingredients, and proper usage of the teas.
+- Improve customer experience and reduce the need for manual support.
 
-
-## Pipeline (version 1)
-
-![Pipeline][pipeline-screenshot]
-
-
-## Pipeline (version 2)
+---
+## 🧠 System Architecture
+```text
+         [ User ]
+            │
+            ▼
+      [ Flask API ]
+            │
+            ▼
+[ Agent (Intent Classifier) ]
+|-----------------------> Irrelevant => [ Gemini API only ]
+            │
+            ▼
+   [ Hybrid Retriever ]
+   ├─ BM25 Search (text-based)
+   ├─ FAISS Vector Search (embedding-based)
+   └─ BGE Reranker (improve result relevance)
+            │
+            ▼
+[ Retrieved Context + User Query ]
+            │
+            ▼
+   [ Gemini API (LLM) ]
+            │
+            ▼
+      [ Response ]
+```
 ![Pipeline2][pipeline-screenshot2]
 
-## Setup 
 
-### Run notebook file
-- Import ['TeaChat.ipynb'](TeaChat.ipynb) to Google Colab or run locally.
-- Replace ['gemini token']() and ['ngrok token']() with your tokens.
-- Run all cells to expose your ngrok API.
+---
 
-### Paste your API into herbalTeaChatBot.py 
-- Paste to this line
+
+### 🔧 Technologies Used:
+- **Flask** – API backend
+- **FAISS** – Vector search engine
+- **BM25** – Traditional keyword-based retriever
+- **BGE Reranker** – Improves ranking of search results
+- **Gemini API** – Language model for response generation
+- **Ngrok** – Expose local API to the internet
+- **Agent Tool Calling** – Determines relevance to herbal tea context
+
+---
+
+## ⚙️ Setup
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/hoangthvn2201/HerbalTea-Chatbot.git
+cd HerbalTea-Chatbot
+```
+
+### 2. Create a Virtual Environment
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+### 3. Environment Variables
+```bash
+NGROK_TOKEN = "YOUR/NRGOK/TOKEN"
+GEMINI_TOKEN = "GEMINI/API/TOKEN"
+PINECONE_TOKEN = "PINECONE/API/TOKEN"
+```
+
+### 4. Start Backend Service to expose the chat API
+```bash
+python main.py
+```
+Copy the provided ngrok URL and use it as the public endpoint for your chatbot
+
+### 5. (Optional) Using front-end interface with Streamlit
+- Paste the exposed api to this line in app.py
    ```sh
     st.session_state.flask_api_url_1 = "https://dd90-34-125-186-68.ngrok-free.app/v1/chat"  # Set your Flask API URL here
    ```
 
-### Run 
+### 6. (Optional) Run the interface 
 
 ```bash
-streamlit run herbaltea_chatbot/herbatTeaChatBot.py
+streamlit run herbaltea_chatbot/app.py
 ```
 
-## Contact 
-Tran Huy Hoang - [@huyhoangt2004](https://www.linkedin.com/in/huyhoangt2004/) - huyhoangt2202@gmail.com
+
+## 📞 Contact
+
+For questions, feedback, or contributions, please reach out via:
+
+- 📧 **Email**: [huyhoangt2201@gmail.com](mailto:huyhoangt2201@gmail.com)  
+- 🌐 **LinkedIn**: [@huyhoangt2004](https://www.linkedin.com/in/huyhoangt2004/) 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
