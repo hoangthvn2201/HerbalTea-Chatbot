@@ -1,0 +1,12 @@
+scrapy
+langchain
+langchain-community
+faiss-cpu
+langchain-openai
+rank_bm25
+langchain_experimental
+FlagEmbedding
+langchain-google-genai
+pyngrok
+flask_cors
+pinecone
