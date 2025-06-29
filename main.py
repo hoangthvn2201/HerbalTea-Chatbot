@@ -7,7 +7,8 @@ import os
 from tool_calling import Retrieve
 from prompts import TOOL_PROMPT, ANSWER_PROMPT
 from retriever import Retriever
-from langchain.pydantic_v1 import BaseModel, Field
+# from langchain.pydantic_v1 import BaseModel, Field
+from pydantic import BaseModel 
 
 load_dotenv()
 

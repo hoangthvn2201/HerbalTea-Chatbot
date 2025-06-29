@@ -1,4 +1,5 @@
-from langchain.pydantic_v1 import BaseModel, Field
+# from langchain.pydantic_v1 import BaseModel, Field
+from pydantic import BaseModel, Field
 
 # Define a BaseModel Retrieve class for LLM tool calling
 class Retrieve(BaseModel):
