@@ -37,7 +37,7 @@ class Retriever:
     self.gemini_token = gemini_token
     self.pinecone_api = pinecone_api
     self.embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004", google_api_key=gemini_token)
-    self.semantic_retriever = FAISS.load_local(folder_path=r"data\faiss_index", index_name="tea",embeddings=self.embeddings, allow_dangerous_deserialization=True)
+    self.semantic_retriever = FAISS.load_local(folder_path="data/faiss_index", index_name="tea",embeddings=self.embeddings, allow_dangerous_deserialization=True)
     self.bm25_retriever = BM25Retriever.from_documents(create_doc(data_path='data/data.json'), k = 10)
     self.reranker = Reranker(pinecone_api)
 
