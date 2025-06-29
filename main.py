@@ -84,6 +84,5 @@ if __name__ == '__main__':
     # Start ngrok to tunnel the Flask app
     url = ngrok.connect(5000)
     print(f" * ngrok tunnel: {url}")
-
     # Start Flask app
     app.run(port=5000)
