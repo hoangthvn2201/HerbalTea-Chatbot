@@ -11,3 +11,4 @@ pyngrok
 flask_cors
 pinecone
 uvicorn
+fastapi
