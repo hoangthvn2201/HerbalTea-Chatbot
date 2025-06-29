@@ -73,6 +73,11 @@ NGROK_TOKEN = "YOUR/NRGOK/TOKEN"
 GEMINI_TOKEN = "GEMINI/API/TOKEN"
 PINECONE_TOKEN = "PINECONE/API/TOKEN"
 ```
+### 4. Setup FAISS vector store
+```bash
+python indexing.py
+```
+
 
 ### 4. Start Backend Service to expose the chat API
 ```bash

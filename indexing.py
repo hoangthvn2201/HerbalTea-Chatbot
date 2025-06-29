@@ -31,4 +31,4 @@ if __name__ == "__main__":
       index_to_docstore_id={},
   )
   vector_store.add_documents(documents=list_of_documents, ids=uuids)
-  vector_store.save_local(r"C:\Users\huyho\OneDrive\Desktop\HerbalTea-Chatbot\data\faiss_index","tea")
+  vector_store.save_local(r"data\faiss_index","tea")
