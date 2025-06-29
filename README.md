@@ -64,7 +64,7 @@ cd HerbalTea-Chatbot
 ### 2. Create a Virtual Environment
 ```bash
 python -m venv venv
-source venv/bin/activate
+venv\Scripts\activate
 pip install -r requirements.txt
 ```
 ### 3. Environment Variables
@@ -78,20 +78,19 @@ PINECONE_TOKEN = "PINECONE/API/TOKEN"
 python indexing.py
 ```
 
-
-### 4. Start Backend Service to expose the chat API
+### 5. Start Backend Service to expose the chat API
 ```bash
 python main.py
 ```
 Copy the provided ngrok URL and use it as the public endpoint for your chatbot
 
-### 5. (Optional) Using front-end interface with Streamlit
+### 6. (Optional) Using front-end interface with Streamlit
 - Paste the exposed api to this line in app.py
    ```sh
     st.session_state.flask_api_url_1 = "https://dd90-34-125-186-68.ngrok-free.app/v1/chat"  # Set your Flask API URL here
    ```
 
-### 6. (Optional) Run the interface 
+### 7. (Optional) Run the interface 
 
 ```bash
 streamlit run herbaltea_chatbot/app.py
